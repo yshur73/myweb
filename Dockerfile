@@ -5,12 +5,12 @@ FROM ubuntu:14.04
 MAINTAINER "hur.yeongseon <yshur@yeongseon.com>"
 
 # 이미지를 설명한다.
-LABEL "purpose"="webserver pratice"
+LABEL "purpose"="webserver practice"
 
 # apt 업데이트 후 필요한 패키지를 설치한다. 이후 사용했던 apt 캐시를 삭제한다.
-# -qq 옵선은 quiet 옵션의 2단계로 로깅 정보를 삭제해 주고, --no-install-recommands 옵션을 통해 apt가 자동으로 권장 패키지를 설치하지 않게 하여 꼭 필요한 패키지만 설치된다.
+# -qq 옵선은 quiet 옵션의 2단계로 로깅 정보를 삭제해 주고, --no-install-recommends 옵션을 통해 apt가 자동으로 권장 패키지를 설치하지 않게 하여 꼭 필요한 패키지만 설치된다.
 RUN apt-get update && \
-    apt-get install apache2 -y -qq --no-install-recommands && \
+    apt-get install apache2 -y -qq --no-install-recommends && \
     apt-get clean -y && \
     apt-get autoremove -y && \
     rm -rfv /var/lib/apt/lists/* /tmp/* /var/tmp/*
