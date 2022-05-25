@@ -20,6 +20,7 @@ WORKDIR /var/www/html
 
 # WORKDIR을 통해 이동된 경로에 호스트 파일인 index.html을 복사한다. (COPY 가능)
 ADD index.html .
+ADD docker_logo.png .
 
 # 커테이너의 80번 포트를 열어준다
 EXPOSE 80
